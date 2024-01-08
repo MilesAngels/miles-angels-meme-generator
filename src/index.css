@@ -1,0 +1,109 @@
+/* Colors */
+/* #EAEDDA - Main Color */
+/* #5EC27E - Secondary Color */
+/* #78844F - Tertiary Color*/
+
+:root {
+    --main-color: #EAEDDA;
+    --secondary-color: #5EC27E;
+    --tertiary-color: #78844F;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--main-color);
+}
+
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    border: 1px solid var(--tertiary-color);
+}
+
+.small-font {
+    font-size: 0.85rem;
+}
+
+.medium-font {
+    font-size: 1.15rem;
+}
+
+.nav {
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 2rem;
+}
+
+.site-branding {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: black;
+}
+
+.site-branding > .logo {
+    margin-right: 1rem;
+}
+
+.logo {
+    width: 29px;
+}
+
+.input1, .input2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.input1 {
+    grid-area: input1;
+}
+
+.input2 {
+    grid-area: input2;
+}
+
+.first-text, .second-text {
+    text-indent: 0.5rem;
+    padding: 0.15rem;
+}
+
+
+.submit-btn {
+    grid-area: button;
+    padding: 0.45rem;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--tertiary-color);
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.new-meme-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "input1 input2"
+        "button button"
+    ;
+    grid-gap: 1.25rem;
+    width: 80%;
+    margin: 2rem auto;
+}
+.meme-img {
+    max-width: 80%;
+    margin: 0 auto;
+}
+.meme-img > img{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
