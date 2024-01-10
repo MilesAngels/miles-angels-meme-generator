@@ -107,6 +107,7 @@ body {
     width: 100%;
     display: block;
     margin: 0 auto;
+    padding: 2rem 0;
 }
 
 .meme--text {

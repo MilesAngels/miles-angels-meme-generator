@@ -1,6 +1,7 @@
-# React + Vite
+# Meme Generator Created using Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- This is a small application that fetches meme images, displays it to the DOM, and add text to add more context to the meme.
+
 
 Currently, two official plugins are available:
 
