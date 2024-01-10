@@ -1,18 +1,28 @@
-import memesData from "../memesData";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function NewMeme() {
+  // Responsible for state of texts and images
   const [meme, setMeme] = useState({
     topText: "",
     bottomText: "",
     randomImg: "",
   });
 
-  const [allMemeImg, setAllMemeImg] = useState(memesData);
+  // Responsible for state of meme data being fetched from url
+  const [allMemes, setAllMemes] = useState([]);
+
+  // Responsible for fetching data from url
+  // Use meme dependency to make sure we do not create an infinite
+  // loop of re-fetching items and re-rendering dom elements
+  useEffect(() => {
+    fetch("https://api.imgflip.com/get_memes")
+    .then(response => response.json())
+    .then(memeData => setAllMemes(memeData.data.memes))
+  }, [meme])
 
   // Get new Meme Image
   function getMemeImg() {
-    const memesArray = allMemeImg.data.memes;
+    const memesArray = allMemes;
     const randomNum = Math.floor(Math.random() * memesArray.length);
     const url = memesArray[randomNum].url;
     setMeme((prevMeme) => ({
